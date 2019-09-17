@@ -26,4 +26,5 @@ public class particleManager : MonoBehaviour
     {
         windParticle.Stop(); // パーティクルストップ
     }
+
 }

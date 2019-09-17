@@ -7,15 +7,31 @@ public class InputManager : MonoBehaviour
     public particleManager particleManager;
     public Joystick joystick;
     public GameObject airplane;
+    public GameObject bullet;
+    public Transform muzzle; // 弾丸発射点
     private float moveSpeed = 2f;
     private float downLimit = -6.0f, upLimit = 6.6f;
     private float undoPosition_Num = 0.05f;
+    private bool push = false;
+    private int Count = 0;
+
+    public void PushDown()
+    {
+        push = true;
+    }
+
+    public void PushUp()
+    {
+        push = false;
+    }
+
     void start()
     {
     }
 
     void Update()
     {
+        // 移動
         if (downLimit < airplane.transform.position.y) // 下、場外に行かないように
         {
             joystickController(); // ジョイスティック動き
@@ -30,6 +46,22 @@ public class InputManager : MonoBehaviour
         else
         {
             airplane.transform.position = new Vector3(airplane.transform.position.x, upLimit - undoPosition_Num, airplane.transform.position.z);
+        }
+
+        // 球
+        // z キーが押された時
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            // 弾丸の複製
+            GameObject bullets = Instantiate(bullet) as GameObject;
+
+            // 弾丸の位置を調整
+            bullets.transform.position = muzzle.transform.position;
+        }
+
+        if (push)
+        {
+            playBullet();
         }
     }
 
@@ -49,6 +81,19 @@ public class InputManager : MonoBehaviour
         {
             particleManager.stopParticle_wind(); // エフェクト停止
         }
+    }
+
+    public void playBullet()
+    {
+        if ((Count % 10) == 0)
+        {
+            // 弾丸の複製
+            GameObject bullets = Instantiate(bullet) as GameObject;
+
+            // 弾丸の位置を調整
+            bullets.transform.position = muzzle.transform.position;
+        }
+        Count++;
     }
 
 }
