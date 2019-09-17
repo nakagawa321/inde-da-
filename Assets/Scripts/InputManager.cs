@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public particleManager particleManager;
     public Joystick joystick;
     public GameObject airplane;
     private float moveSpeed = 2f;
@@ -41,8 +42,12 @@ public class InputManager : MonoBehaviour
         //Vector.zero : (0,0,0)なので、動いたら….
         if (moveVector != Vector3.zero)
         {
+            particleManager.playParticle_wind(); // エフェクト開始
             //移動…movespeedは移動速度のパラメータ。
             airplane.transform.Translate(moveVector * moveSpeed * Time.deltaTime, Space.World);
+        } else
+        {
+            particleManager.stopParticle_wind(); // エフェクト停止
         }
     }
 
