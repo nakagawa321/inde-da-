@@ -861,7 +861,6 @@ GameObject:
   - component: {fileID: 900918062}
   - component: {fileID: 900918063}
   - component: {fileID: 900918064}
-  - component: {fileID: 900918065}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -913,18 +912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windParticle: {fileID: 2141558239}
---- !u!114 &900918065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900918061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f334757f4706b144490434d70e1c4232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1053489006
 GameObject:
   m_ObjectHideFlags: 0
