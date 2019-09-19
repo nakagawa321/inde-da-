@@ -10,7 +10,6 @@ public class moveY_enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -22,6 +21,7 @@ public class moveY_enemy : MonoBehaviour
     // 当たると消える
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // 別のオブジェクト(Sphere)のスクリプトを参照する場合
         if (collision.gameObject.name != "bulletEnemy(Clone)")
         {
             Destroy(bulletEnemy);

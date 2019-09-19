@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class enemyMove : MonoBehaviour
 {
+    public GameObject scripts;
     public GameObject enemy;
     public GameObject enemyBullet;
-    public GameObject muzzle;
-    private float min_enemyX = -0.25f, max_enemyX = 0.25f;
+    public Transform muzzle;
+    private float min_enemyX = -0.1f, max_enemyX = 0.1f;
     private float min_enemyY = -0.01f, max_enemyY = -0.05f;
-    private int Count = 0;
+    private int Count = 1;
     private int minCount = 200, maxCount = 300;
     private int ramCount = 200;
 
@@ -17,7 +18,7 @@ public class enemyMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        scripts = GameObject.Find("Scripts");
     }
 
     // Update is called once per frame
@@ -31,12 +32,9 @@ public class enemyMove : MonoBehaviour
         if ((Count % ramCount) == 0)
         {
             ramCount = Random.Range(minCount, maxCount); //ランダム値取得
-
-            // 弾丸の複製
-            GameObject bullets = Instantiate(enemyBullet) as GameObject;
-
-            // 弾丸の位置を調整
-            bullets.transform.position = muzzle.transform.position;
+            Count = 0;
+            // 別のオブジェクト(Sphere)のスクリプトを参照する場合
+            scripts.GetComponent<instanceManager>().instance(enemyBullet, muzzle);
         }
         Count++;
     }
