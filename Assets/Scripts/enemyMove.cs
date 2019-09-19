@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveY : MonoBehaviour
+public class enemyMove : MonoBehaviour
 {
-    public GameObject bullet;
-    private float speed = 10.0f;
+    public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += this.transform.up * speed * Time.deltaTime;
+
     }
 
     // 当たると消える
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != "bullet(Clone)")
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name != "bullet(Clone)" || collision.gameObject.name != "ziki")
         {
-            Destroy(bullet);
+            Destroy(enemy);
         }
     }
 
