@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public instanceManager instanceManager = new instanceManager();
     public particleManager particleManager;
     public Joystick joystick;
     public GameObject airplane;
@@ -77,11 +78,7 @@ public class InputManager : MonoBehaviour
     {
         if ((Count % 10) == 0)
         {
-            // 弾丸の複製
-            GameObject bullets = Instantiate(bullet) as GameObject;
-
-            // 弾丸の位置を調整
-            bullets.transform.position = muzzle.transform.position;
+            instanceManager.instance(bullet, muzzle);
         }
         Count++;
     }

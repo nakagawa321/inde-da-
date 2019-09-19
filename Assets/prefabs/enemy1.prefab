@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &601685668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601685669}
+  m_Layer: 0
+  m_Name: muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &601685669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601685668}
+  m_LocalRotation: {x: -0, y: 0.9961947, z: 0.08715578, w: 0}
+  m_LocalPosition: {x: 0.033333328, y: -3.8, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 850586810271967710}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850586810271872504
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +230,7 @@ GameObject:
   - component: {fileID: 2444041123392640697}
   - component: {fileID: 1743739010}
   m_Layer: 0
-  m_Name: enemey1
+  m_Name: enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,6 +250,7 @@ Transform:
   - {fileID: 850586810271967708}
   - {fileID: 850586810271967706}
   - {fileID: 850586810271967704}
+  - {fileID: 601685669}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 190, y: 0, z: 180}
@@ -342,4 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63625fcbb43678408fa0704dad34d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instanceManager: {fileID: 0}
   enemy: {fileID: 850586810271872510}
+  enemyBullet: {fileID: 2527490224753529394, guid: 2c781b8db5f2d7f448988884998e6387,
+    type: 3}
+  muzzle: {fileID: 601685669}
