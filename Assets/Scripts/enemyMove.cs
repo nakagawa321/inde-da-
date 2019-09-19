@@ -25,7 +25,7 @@ public class enemyMove : MonoBehaviour
     {
 
         // 敵の移動
-        //  this.transform.position = new Vector3(this.transform.position.x + Random.Range(min_enemyX, max_enemyX), this.transform.position.y + Random.Range(min_enemyY, max_enemyY), this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x + Random.Range(min_enemyX, max_enemyX), this.transform.position.y + Random.Range(min_enemyY, max_enemyY), this.transform.position.z);
 
         // 球
         if ((Count % ramCount) == 0)
@@ -44,7 +44,7 @@ public class enemyMove : MonoBehaviour
     // 当たると消える
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "bullet(Clone)" || collision.gameObject.name == "ziki")
+        if (collision.gameObject.name == "bullet(Clone)" || collision.gameObject.name == "ziki" || collision.gameObject.name == "Cube (4)")
         {
             Destroy(enemy);
         }
