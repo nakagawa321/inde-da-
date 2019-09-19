@@ -49,16 +49,6 @@ public class InputManager : MonoBehaviour
         }
 
         // 球
-        // z キーが押された時
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            // 弾丸の複製
-            GameObject bullets = Instantiate(bullet) as GameObject;
-
-            // 弾丸の位置を調整
-            bullets.transform.position = muzzle.transform.position;
-        }
-
         if (push)
         {
             playBullet();
