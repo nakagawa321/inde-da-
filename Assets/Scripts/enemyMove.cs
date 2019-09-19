@@ -11,7 +11,7 @@ public class enemyMove : MonoBehaviour
     private float min_enemyX = -0.1f, max_enemyX = 0.1f;
     private float min_enemyY = -0.01f, max_enemyY = -0.05f;
     private int Count = 1;
-    private int minCount = 200, maxCount = 300;
+    private int minCount = 50, maxCount = 200;
     private int ramCount = 200;
 
 

@@ -23,7 +23,7 @@ public class collisionZiki : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name == "enemy1" || collision.gameObject.name == "enemy2" || collision.gameObject.name == "enemy3" ||  collision.gameObject.name == "bulletEnemy(Clone)")
+        if (collision.gameObject.name == "enemy1(Clone)" || collision.gameObject.name == "enemy2(Clone)" || collision.gameObject.name == "enemy3(Clone)" ||  collision.gameObject.name == "bulletEnemy(Clone)")
         {
             if (hp[2] != null)
             {
