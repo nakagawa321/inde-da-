@@ -15,7 +15,8 @@ public class enemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // 敵の移動
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.01f, this.transform.position.z);
     }
 
     // 当たると消える
