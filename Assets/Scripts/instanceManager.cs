@@ -8,6 +8,17 @@ public class instanceManager : MonoBehaviour
     private int Count = 1;
     private int minCount = 100, maxCount = 200;
     private int ramCount = 200;
+    private float minPosX = -1.5f, maxPosX = 1.5f;
+    private float enemyPosY = 9.0f;
+    private float enemyPosZ = 0.0f;
+
+    private enum ENEMYCOLOR
+    {
+        BLUE,
+        GREEN,
+        RED,
+        MAX
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +34,7 @@ public class instanceManager : MonoBehaviour
             ramCount = Random.Range(minCount, maxCount); //ランダム値取得
             Count = 0;
             // Cubeプレハブを元に、インスタンスを生成、
-            Instantiate(enemy[0], new Vector3(0.0f, 9.0f, 0.0f), Quaternion.identity);
+            Instantiate(enemy[Random.Range((int)ENEMYCOLOR.BLUE, (int)ENEMYCOLOR.MAX)], new Vector3(Random.Range(minPosX, maxPosX), enemyPosY, enemyPosZ), Quaternion.identity);
         }
         Count++;
     }
