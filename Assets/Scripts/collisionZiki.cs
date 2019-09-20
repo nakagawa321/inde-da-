@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class collisionZiki : MonoBehaviour
 {
+    public soundManager soundmanager = new soundManager();
     public GameObject[] hp = new GameObject[3];
 
     // Start is called before the first frame update
@@ -22,7 +23,6 @@ public class collisionZiki : MonoBehaviour
     // 当たるとhp削る
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "enemy1(Clone)" || collision.gameObject.name == "enemy2(Clone)" || collision.gameObject.name == "enemy3(Clone)" ||  collision.gameObject.name == "bulletEnemy(Clone)")
         {
             if (hp[2] != null)
@@ -33,6 +33,7 @@ public class collisionZiki : MonoBehaviour
                 Destroy(hp[1]);
             } else if (hp[0] != null)
             {
+                soundmanager.playSound_bomb();
                 Destroy(hp[0]);
                 // ゲームオーバー
                 SceneManager.LoadScene("Finish");

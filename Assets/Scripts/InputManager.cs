@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public instanceManager instanceManager = new instanceManager();
+    public soundManager soundManager = new soundManager();
     public particleManager particleManager;
     public Joystick joystick;
     public GameObject airplane;
@@ -78,6 +79,7 @@ public class InputManager : MonoBehaviour
     {
         if ((Count % 10) == 0)
         {
+            soundManager.playSound_shot(); // ショット再生
             instanceManager.instance(bullet, muzzle);
         }
         Count++;
