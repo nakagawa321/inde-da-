@@ -9,7 +9,7 @@ public class instanceManager : MonoBehaviour
     private int minCount = 100, maxCount = 200;
     private int ramCount = 200;
     private float minPosX = -1.5f, maxPosX = 1.5f;
-    private float enemyPosY = 9.0f;
+    private float enemyPosY = 6.5f;
     private float enemyPosZ = 0.0f;
 
     private enum ENEMYCOLOR
